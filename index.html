@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101512"><meta name="description" content="Entrenamiento personalizado según tus objetivos y disponibilidad.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+<title>FORJA — Entrena con propósito</title>
+</head>
+<body>
+<header class="top"><div class="brand"><span class="mark">F</span><span>FORJA</span></div><span class="tag">TU ENTRENADOR PERSONAL</span></header>
+<main>
+<section class="hero"><p class="eyebrow">ENTRENAMIENTO INTELIGENTE</p><h1>Entrena con<br><em>propósito.</em></h1><p class="muted">Cuéntanos cómo eres y qué quieres lograr. Creamos un plan que se adapta a ti.</p></section>
+<nav class="tabs"><button class="tab active" data-tab="crear">Crear rutina</button><button class="tab" data-tab="progreso">Mi progreso</button></nav>
+<section id="crear" class="panel active">
+<form id="profile">
+<div class="section-head"><span class="step">01</span><div><h2>Tu punto de partida</h2><p>Datos básicos para adaptar el entrenamiento.</p></div></div>
+<div class="grid">
+<label>Edad<input id="age" type="number" min="13" max="100" placeholder="Ej. 20" required></label>
+<label>Estatura (cm)<input id="height" type="number" min="100" max="230" placeholder="Ej. 175" required></label>
+<label>Peso (kg)<input id="weight" type="number" min="25" max="300" step=".1" placeholder="Ej. 70" required></label>
+<label>Nivel<select id="level"><option value="principiante">Principiante</option><option value="intermedio">Intermedio</option><option value="avanzado">Avanzado</option></select></label>
+</div>
+<div class="section-head"><span class="step">02</span><div><h2>Tu objetivo</h2><p>Elige el enfoque principal.</p></div></div>
+<div class="choices">
+<label class="choice"><input type="radio" name="goal" value="hipertrofia" checked><span class="emoji">◈</span><b>Hipertrofia</b><small>Desarrollo muscular</small></label>
+<label class="choice"><input type="radio" name="goal" value="fuerza"><span class="emoji">↗</span><b>Fuerza y potencia</b><small>Fuerza y explosividad</small></label>
+<label class="choice"><input type="radio" name="goal" value="resistencia"><span class="emoji">⌁</span><b>Resistencia</b><small>Capacidad física</small></label>
+<label class="choice"><input type="radio" name="goal" value="movilidad"><span class="emoji">◎</span><b>Movilidad</b><small>Control y flexibilidad</small></label>
+<label class="choice wide"><input type="radio" name="goal" value="deportivo"><span class="emoji">✳</span><b>Rendimiento deportivo</b><small>Preparación física para tu deporte</small></label>
+</div>
+<div id="sportWrap" class="hidden"><label>¿Qué deporte practicas?<input id="sport" maxlength="50" placeholder="Ej. tenis de mesa, fútbol, atletismo"></label></div>
+<div class="section-head"><span class="step">03</span><div><h2>Tu disponibilidad</h2><p>Diseñamos el plan alrededor de tu semana.</p></div></div>
+<div class="grid">
+<label>Días por semana<select id="days"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option></select></label>
+<label>Minutos por sesión<select id="minutes"><option>30</option><option selected>45</option><option>60</option><option>75</option><option>90</option></select></label>
+<label class="full">Equipamiento<select id="equipment"><option value="gym">Gimnasio completo</option><option value="home">Casa: peso corporal</option><option value="basic">Casa: mancuernas/bandas</option></select></label>
+</div>
+<label class="check"><input type="checkbox" id="limitations"> Tengo una lesión, dolor o limitación que debo considerar</label>
+<div id="limitationsWrap" class="hidden"><label>Describe la limitación (no reemplaza evaluación profesional)<textarea id="limitationsText" rows="2" placeholder="Ej. molestia de rodilla al saltar"></textarea></label></div>
+<button class="primary" type="submit">Generar mi rutina <span>→</span></button>
+<p class="fine">La rutina es orientativa. Si tienes dolor, lesión o una condición médica, consulta a un profesional antes de entrenar.</p>
+</form>
+<div id="routine" class="routine hidden"></div>
+</section>
+<section id="progreso" class="panel">
+<div class="section-head"><span class="step">↗</span><div><h2>Tu progreso</h2><p>Registra tus sesiones y mantén el ritmo.</p></div></div>
+<div class="stats"><div><strong id="count">0</strong><small>sesiones completadas</small></div><div><strong id="streak">0</strong><small>esta semana</small></div></div>
+<div id="history" class="history"><p class="muted">Todavía no hay sesiones registradas. ¡Tu primera rutina te espera!</p></div>
+</section>
+</main>
+<footer>FORJA <span>•</span> Constancia antes que perfección.</footer>
+<script src="app.js"></script>
+</body></html>
